@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class node{
+public:
+    int val;
+    node* next;
+    //parameterised constructor
+    node(int val){
+        this->val=val;
+        this->next=NULL;
+    }
+};
+//printing linked list
+                        void display(node* head){
+                            node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+//printing the size of linked list
+void size(node* head){
+    node* temp=head;
+    int s=0;        
+    while(temp!=NULL){
+        s++;
+        temp=temp->next;
+    }
+    //printing the size of our linked list
+    cout<<s;
+    cout<<endl;
+}
+int main(){
+    node* a=new node(10);
+    node* b=new node(20);
+    node* c=new node(30);
+    node* d=new node(40);
+    node* e=new node(50);
+    a->next=b;
+    b->next=c;
+    c->next=d;
+    d->next=e;
+    e->next=NULL;
+    display(a);
+    size(a);
+}
